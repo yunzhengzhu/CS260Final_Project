@@ -1,0 +1,2 @@
+model_checkpoint_path: "/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_model_semeval/best_bleu/translate.ckpt-1000"
+all_model_checkpoint_paths: "/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_model_semeval/best_bleu/translate.ckpt-1000"

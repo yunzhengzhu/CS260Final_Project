@@ -1,0 +1,13 @@
+python -m nmt.nmt \
+    --src=en --tgt=en2 \
+    --vocab_prefix=/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_data/vocab  \
+    --train_prefix=/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_data/train \
+    --dev_prefix=/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_data/dev  \
+    --test_prefix=/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_data/test \
+    --out_dir=/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_model_semeval \
+    --num_train_steps=1000 \
+    --steps_per_stats=100 \
+    --num_layers=2 \
+    --num_units=128 \
+    --dropout=0.2 \
+    --metrics=bleu

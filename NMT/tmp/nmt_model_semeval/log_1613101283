@@ -1,0 +1,14 @@
+# log_file=/media/kingformatty/easystore/CS260/project/nmt/tmp/nmt_model_semeval/log_1613101283
+# Start step 0, lr 1, Thu Feb 11 19:41:31 2021
+  step 100 lr 1 step-time 0.24s wps 9.06K ppl 827.19 gN 5.36 bleu 0.00, Thu Feb 11 19:41:55 2021
+  step 200 lr 1 step-time 0.23s wps 9.33K ppl 235.13 gN 2.66 bleu 0.00, Thu Feb 11 19:42:18 2021
+  step 300 lr 1 step-time 0.22s wps 9.43K ppl 176.47 gN 3.20 bleu 0.00, Thu Feb 11 19:42:40 2021
+  step 400 lr 1 step-time 0.22s wps 9.56K ppl 136.26 gN 2.63 bleu 0.00, Thu Feb 11 19:43:02 2021
+  step 500 lr 1 step-time 0.22s wps 9.16K ppl 113.96 gN 3.15 bleu 0.00, Thu Feb 11 19:43:25 2021
+  step 600 lr 1 step-time 0.22s wps 9.50K ppl 97.30 gN 2.40 bleu 0.00, Thu Feb 11 19:43:47 2021
+  step 700 lr 1 step-time 0.22s wps 9.64K ppl 88.97 gN 2.41 bleu 0.00, Thu Feb 11 19:44:09 2021
+  step 800 lr 1 step-time 0.22s wps 9.52K ppl 81.13 gN 2.98 bleu 0.00, Thu Feb 11 19:44:31 2021
+  step 900 lr 1 step-time 0.22s wps 9.64K ppl 73.74 gN 2.30 bleu 0.00, Thu Feb 11 19:44:53 2021
+  step 1000 lr 1 step-time 0.22s wps 9.39K ppl 71.22 gN 2.94 bleu 0.00, Thu Feb 11 19:45:15 2021
+# Final, step 1000 lr 1 step-time 0.22s wps 9.39K ppl 71.22 gN 2.94 dev ppl 80.50, dev bleu 0.4, test ppl 83.98, test bleu 0.4, Thu Feb 11 19:45:34 2021
+# Best bleu, step 1000 lr 1 step-time 0.22s wps 9.39K ppl 71.22 gN 2.94 dev ppl 80.50, dev bleu 0.4, test ppl 83.98, test bleu 0.4, Thu Feb 11 19:45:46 2021
