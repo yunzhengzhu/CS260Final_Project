@@ -349,42 +349,32 @@ def main():
 
     truth_dir = sys.argv[1]  # ref dir: data/${DATA}/test/target.csv
     # generation dir / predictions #models/${DATA_TYPE}/grf-${DATA_TYPE}_eval/result_ep:test.txt
-    submit_dir = sys.argv[2]
+    submission_file = sys.argv[2]
     output_dir = sys.argv[3]
 
-    if not os.path.isdir(submit_dir):
-        print(f"{submit_dir} doesn't exist")
-
-    if os.path.isdir(submit_dir) and os.path.isdir(truth_dir):
+    if os.path.isdir(truth_dir):
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
         output_filename = os.path.join(output_dir, 'comve_bleu_score.txt')
-        output_file = open(output_filename, 'w')
+        output_file = open(output_filename, 'a')
 
-        taskC_file = 'result_ep:test.txt'
+        gold_reference_file = os.path.join(truth_dir, "target.csv")
 
-        submission_files = os.listdir(submit_dir)
-        submission_files = [f for f in submission_files if f != '.DS_Store']
+        # id, reference (without header)
+        references, ids, sentences = read_references_taskC(
+            gold_reference_file)
+        predictions = read_predictions_taskC(submission_file, ids)
 
-        if taskC_file in submission_files:
-            gold_reference_file = os.path.join(truth_dir, "target.csv")
+        avg_sim = calculate_sem_sim(sentences, predictions)
+        bleu = calculate_bleu(references, predictions,
+                                max_order=4, smooth=False)
 
-            # id, reference (without header)
-            references, ids, sentences = read_references_taskC(
-                gold_reference_file)
-            submission_file = os.path.join(submit_dir, taskC_file)
-            predictions = read_predictions_taskC(submission_file, ids)
+        output_file.write(f'File: {submission_file}\n')
+        output_file.write(f'C_BLEU: {bleu*100:.4f}\n')
+        output_file.write(f'Avg_Sem_Sim: {avg_sim:.5f}\n\n')
 
-            avg_sim = calculate_sem_sim(sentences, predictions)
-            bleu = calculate_bleu(references, predictions,
-                                  max_order=4, smooth=False)
-
-            output_file.write(f'C_BLEU: {bleu*100:.4f}\n')
-            output_file.write(f'Avg_Sem_Sim: {avg_sim:.5f}\n')
-
-            print(f'C_BLEU: {bleu*100:.4f}\nAvg_Sem_Sim: {avg_sim:.5f}')
-        else:
-            output_file.write(f'C_BLEU: 0\n')
+        print(f'C_BLEU: {bleu*100:.4f}\nAvg_Sem_Sim: {avg_sim:.5f}')
+            
 
         output_file.close()
 

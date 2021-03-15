@@ -173,7 +173,8 @@ def train(args, train_dataset, model, tokenizer):
     gpt2_params = []
     optimizer_grouped_parameters = [
         {'params': [p for n, p in model.named_parameters() if not any(gn in n for gn in gpt2_params)]}]
-    optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
+    optimizer = AdamW(  optimizer_grouped_parameters, lr=args.learning_rate, betas=(0.9, 0.999), 
+                        eps=args.adam_epsilon, weight_decay=args.weight_decay, correct_bias=True)
     scheduler = WarmupLinearSchedule(
         optimizer, warmup_steps=int(args.warmup_ratio * t_total), t_total=t_total
     )
@@ -499,9 +500,9 @@ def main():
     parser.add_argument("--learning_rate", default=1e-6, type=float,
                         help="The initial learning rate for Adam.")
     parser.add_argument("--weight_decay", default=0.0, type=float,
-                        help="Weight deay if we apply some.")
-    parser.add_argument("--adam_epsilon", default=1e-8, type=float,
-                        help="Epsilon for Adam optimizer.")
+                        help="Weight deay if we apply some.") # 0.0
+    parser.add_argument("--adam_epsilon", default=1e-6, type=float,
+                        help="Epsilon for Adam optimizer.") # default 1e-8
     parser.add_argument("--max_grad_norm", default=1.0, type=float,
                         help="Max gradient norm.")
     parser.add_argument("--num_train_epochs", default=1, type=int,
@@ -612,6 +613,8 @@ def main():
         
         global_step, tr_loss = train(args, train_dataset, model, tokenizer)
         logger.info(" global_step = %s, average loss = %s", global_step, tr_loss)
+        result = evaluate(args, model, tokenizer, args.evaluate_metrics, 'dev')
+        logger.info("Dev evaluate {}: {:.4f}".format(args.evaluate_metrics, result[args.evaluate_metrics]))
 
     if args.do_eval:
         result = evaluate(args, model, tokenizer, args.evaluate_metrics, 'test')

@@ -1,15 +1,15 @@
-[03/05/2021 19:24:54 - WARNING - root] Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] Model name '../models/gpt2-small' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, distilgpt2). Assuming '../models/gpt2-small' is a path, a model identifier, or url to a directory containing tokenizer files.
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/added_tokens.json. We won't load it.
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/special_tokens_map.json. We won't load it.
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/tokenizer_config.json. We won't load it.
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] loading file ../models/gpt2-small/vocab.json
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] loading file ../models/gpt2-small/merges.txt
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] loading file None
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] loading file None
-[03/05/2021 19:24:54 - INFO - transformers.tokenization_utils] loading file None
-[03/05/2021 19:24:54 - INFO - transformers.configuration_utils] loading configuration file ../models/comve/grf-comve/config.json
-[03/05/2021 19:24:54 - INFO - transformers.configuration_utils] Model config GPT2Config {
+[03/06/2021 23:05:24 - WARNING - root] Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] Model name '../models/gpt2-small' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, distilgpt2). Assuming '../models/gpt2-small' is a path, a model identifier, or url to a directory containing tokenizer files.
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/added_tokens.json. We won't load it.
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/special_tokens_map.json. We won't load it.
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/tokenizer_config.json. We won't load it.
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] loading file ../models/gpt2-small/vocab.json
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] loading file ../models/gpt2-small/merges.txt
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] loading file None
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] loading file None
+[03/06/2021 23:05:24 - INFO - transformers.tokenization_utils] loading file None
+[03/06/2021 23:05:24 - INFO - transformers.configuration_utils] loading configuration file ../models/comve/grf-comve/config.json
+[03/06/2021 23:05:24 - INFO - transformers.configuration_utils] Model config GPT2Config {
   "_num_labels": 2,
   "activation_function": "gelu_new",
   "architectures": [
@@ -75,13 +75,13 @@
   "vocab_size": 50259
 }
 
-[03/05/2021 19:24:54 - INFO - transformers.modeling_utils] loading weights file ../models/comve/grf-comve/pytorch_model.bin
-[03/05/2021 19:24:58 - INFO - modeling_gpt2] Tie weights in head!!!!!
-[03/05/2021 19:24:58 - INFO - modeling_gpt2] Tie weights in head!!!!!
-[03/05/2021 19:24:58 - INFO - modeling_gpt2] Tie weights in head!!!!!
-[03/05/2021 19:24:58 - INFO - modeling_gpt2] Tie weights in head!!!!!
-[03/05/2021 19:24:58 - INFO - root] ----------------------------------------------------------------------------------------------------
-[03/05/2021 19:24:58 - INFO - root] CONFIG:
+[03/06/2021 23:05:24 - INFO - transformers.modeling_utils] loading weights file ../models/comve/grf-comve/pytorch_model.bin
+[03/06/2021 23:05:27 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/06/2021 23:05:27 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/06/2021 23:05:28 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/06/2021 23:05:28 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/06/2021 23:05:28 - INFO - root] ----------------------------------------------------------------------------------------------------
+[03/06/2021 23:05:28 - INFO - root] CONFIG:
 {
     "adam_epsilon": 1e-08,
     "aggregate_method": "max",
@@ -120,38 +120,38 @@
     "source_length": 32,
     "target_length": 32,
     "tb_log_dir": null,
-    "test_data_file": "../data/comve/test",
+    "test_data_file": "../data/comve/dev",
     "train_data_file": "../data/comve/train",
     "validate_steps": -1,
     "warmup_ratio": 0,
     "weight_decay": 0.0,
     "workers": 7
 }
-[03/05/2021 19:24:58 - INFO - root] ----------------------------------------------------------------------------------------------------
-[03/05/2021 19:24:58 - INFO - root] --------------------------------------------------Features--------------------------------------------------
-[03/05/2021 19:24:59 - INFO - root] Input: ['ĠHe', 'Ġloves', 'Ġto', 'Ġstroll', 'Ġat', 'Ġthe', 'Ġpark', 'Ġwith', 'Ġhis', 'Ġbed', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
-[03/05/2021 19:24:59 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[03/05/2021 19:24:59 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[03/05/2021 19:24:59 - INFO - root] Target: []
-[03/05/2021 19:24:59 - INFO - root] Position: []
-[03/05/2021 19:24:59 - INFO - root] Labels: []
-[03/05/2021 19:24:59 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-[03/05/2021 19:24:59 - INFO - root] Input: ['ĠThe', 'Ġinver', 'ter', 'Ġwas', 'Ġable', 'Ġto', 'Ġpower', 'Ġthe', 'Ġcontinent', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
-[03/05/2021 19:24:59 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[03/05/2021 19:24:59 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[03/05/2021 19:24:59 - INFO - root] Target: []
-[03/05/2021 19:24:59 - INFO - root] Position: []
-[03/05/2021 19:24:59 - INFO - root] Labels: []
-[03/05/2021 19:24:59 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-[03/05/2021 19:24:59 - INFO - root] Input: ['ĠThe', 'Ġchef', 'Ġput', 'Ġextra', 'Ġle', 'mons', 'Ġon', 'Ġthe', 'Ġpizza', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
-[03/05/2021 19:24:59 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[03/05/2021 19:24:59 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[03/05/2021 19:24:59 - INFO - root] Target: []
-[03/05/2021 19:24:59 - INFO - root] Position: []
-[03/05/2021 19:24:59 - INFO - root] Labels: []
-[03/05/2021 19:24:59 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-[03/05/2021 19:24:59 - INFO - root] ***** Running evaluation *****
-[03/05/2021 19:24:59 - INFO - root]   Num examples = 1000
-[03/05/2021 19:24:59 - INFO - root]   Batch size = 16
-[03/05/2021 19:38:39 - INFO - root] Save generation result in ../models/comve/grf-comve_eval/result_ep:test.txt
-[03/05/2021 19:38:39 - INFO - root] Test evaluate bleu: 0.1019
+[03/06/2021 23:05:28 - INFO - root] ----------------------------------------------------------------------------------------------------
+[03/06/2021 23:05:28 - INFO - root] --------------------------------------------------Features--------------------------------------------------
+[03/06/2021 23:05:29 - INFO - root] Input: ['ĠSummer', 'Ġin', 'ĠNorth', 'ĠAmerica', 'Ġis', 'Ġgreat', 'Ġfor', 'Ġskiing', ',', 'Ġ', 'Ġsnow', 'sh', 'oe', 'ing', ',', 'Ġ', 'Ġand', 'Ġmaking', 'Ġa', 'Ġsnow', 'man', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/06/2021 23:05:29 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/06/2021 23:05:29 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/06/2021 23:05:29 - INFO - root] Target: []
+[03/06/2021 23:05:29 - INFO - root] Position: []
+[03/06/2021 23:05:29 - INFO - root] Labels: []
+[03/06/2021 23:05:29 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/06/2021 23:05:29 - INFO - root] Input: ['ĠYou', 'Ġcan', 'Ġuse', 'Ġdeter', 'gent', 'Ġto', 'Ġdye', 'Ġyour', 'Ġhair', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/06/2021 23:05:29 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/06/2021 23:05:29 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/06/2021 23:05:29 - INFO - root] Target: []
+[03/06/2021 23:05:29 - INFO - root] Position: []
+[03/06/2021 23:05:29 - INFO - root] Labels: []
+[03/06/2021 23:05:29 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/06/2021 23:05:29 - INFO - root] Input: ['Ġpassing', 'Ġyour', 'Ġdriving', 'Ġlicense', 'Ġexams', 'Ġrequires', 'Ġstudying', 'Ġfor', 'Ġyour', 'Ġclasses', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/06/2021 23:05:29 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/06/2021 23:05:29 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/06/2021 23:05:29 - INFO - root] Target: []
+[03/06/2021 23:05:29 - INFO - root] Position: []
+[03/06/2021 23:05:29 - INFO - root] Labels: []
+[03/06/2021 23:05:29 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/06/2021 23:05:29 - INFO - root] ***** Running evaluation *****
+[03/06/2021 23:05:29 - INFO - root]   Num examples = 997
+[03/06/2021 23:05:29 - INFO - root]   Batch size = 16
+[03/06/2021 23:18:59 - INFO - root] Save generation result in ../models/comve/grf-comve_eval/result_ep:test.txt
+[03/06/2021 23:18:59 - INFO - root] Test evaluate bleu: 0.1423

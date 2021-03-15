@@ -1,0 +1,478 @@
+[03/12/2021 05:22:04 - WARNING - root] Process rank: -1, device: cpu, n_gpu: 0, distributed training: False, 16-bits training: False
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] Model name '../models/gpt2-small' not found in model shortcut name list (gpt2, gpt2-medium, gpt2-large, distilgpt2). Assuming '../models/gpt2-small' is a path, a model identifier, or url to a directory containing tokenizer files.
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/added_tokens.json. We won't load it.
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/special_tokens_map.json. We won't load it.
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] Didn't find file ../models/gpt2-small/tokenizer_config.json. We won't load it.
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] loading file ../models/gpt2-small/vocab.json
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] loading file ../models/gpt2-small/merges.txt
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] loading file None
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] loading file None
+[03/12/2021 05:22:04 - INFO - transformers.tokenization_utils] loading file None
+[03/12/2021 05:22:04 - INFO - transformers.configuration_utils] loading configuration file ../models/gpt2-small/config.json
+[03/12/2021 05:22:04 - INFO - transformers.configuration_utils] Model config GPT2Config {
+  "_num_labels": 2,
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "bad_words_ids": null,
+  "bos_token_id": 50256,
+  "decoder_start_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "finetuning_task": null,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "is_decoder": false,
+  "is_encoder_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_epsilon": 1e-05,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "min_length": 0,
+  "model_type": "gpt2",
+  "n_ctx": 1024,
+  "n_embd": 768,
+  "n_head": 12,
+  "n_layer": 12,
+  "n_positions": 1024,
+  "no_repeat_ngram_size": 0,
+  "num_beams": 1,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": null,
+  "prefix": null,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "resid_pdrop": 0.1,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "use_bfloat16": false,
+  "vocab_size": 50257
+}
+
+[03/12/2021 05:22:04 - INFO - transformers.modeling_utils] loading weights file ../models/gpt2-small/pytorch_model.bin
+[03/12/2021 05:22:06 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/12/2021 05:22:06 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/12/2021 05:22:10 - INFO - transformers.modeling_utils] Weights of MultiHopGen not initialized from pretrained model: ['W_n.1.weight', 'W_r.1.weight', 'W_s.1.weight', 'W_s.0.weight', 'gate_linear.weight', 'relation_embd.weight', 'lm_head.weight', 'gate_linear.bias', 'W_r.0.weight', 'W_n.0.weight', 'triple_linear.weight']
+[03/12/2021 05:22:10 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/12/2021 05:22:11 - INFO - modeling_gpt2] Tie weights in head!!!!!
+[03/12/2021 05:22:11 - INFO - root] ----------------------------------------------------------------------------------------------------
+[03/12/2021 05:22:11 - INFO - root] CONFIG:
+{
+    "adam_epsilon": 1e-05,
+    "aggregate_method": "max",
+    "alpha": 3.0,
+    "beta": 5.0,
+    "dev_data_file": "../data/comve/dev",
+    "device": "cpu",
+    "do_eval": false,
+    "do_generate": false,
+    "do_train": true,
+    "evaluate_metrics": "bleu",
+    "fp16": false,
+    "fp16_opt_level": "O1",
+    "gamma": 0.5,
+    "gradient_accumulation_steps": 1,
+    "graph_path": "2hops_100_directed_triple_filter.json",
+    "learning_rate": 0.0002,
+    "local_rank": -1,
+    "logging_steps": 20,
+    "max_grad_norm": 1.0,
+    "max_steps": -1,
+    "model_name_or_path": "../models/gpt2-small",
+    "model_type": "gpt2",
+    "n_gpu": 0,
+    "no_cuda": false,
+    "num_train_epochs": 3,
+    "output_dir": "../models/comve/grf-comve_e3_lr2-4_eps-5",
+    "overwrite_cache": false,
+    "overwrite_output_dir": true,
+    "per_gpu_eval_batch_size": 16,
+    "per_gpu_train_batch_size": 16,
+    "save_last": true,
+    "seed": 42,
+    "server_ip": "",
+    "server_port": "",
+    "source_length": 32,
+    "target_length": 32,
+    "tb_log_dir": null,
+    "test_data_file": "../data/comve/test",
+    "train_data_file": "../data/comve/train",
+    "validate_steps": -1,
+    "warmup_ratio": 0.0,
+    "weight_decay": 0.0,
+    "workers": 7
+}
+[03/12/2021 05:22:11 - INFO - root] ----------------------------------------------------------------------------------------------------
+[03/12/2021 05:22:26 - INFO - root] --------------------------------------------------Features--------------------------------------------------
+[03/12/2021 05:22:27 - INFO - root] Input: ['ĠHe', 'Ġpoured', 'Ġorange', 'Ġjuice', 'Ġon', 'Ġhis', 'Ġcereal', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 05:22:27 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Target: ['<|bos|>', 'ĠOrange', 'Ġjuice', 'Ġdoesn', "'t", 'Ġtaste', 'Ġgood', 'Ġon', 'Ġcereal', '.', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 05:22:27 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Labels: ['ĠOrange', 'Ġjuice', 'Ġdoesn', "'t", 'Ġtaste', 'Ġgood', 'Ġon', 'Ġcereal', '.', '<|endoftext|>']
+[03/12/2021 05:22:27 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/12/2021 05:22:27 - INFO - root] Input: ['ĠHe', 'Ġpoured', 'Ġorange', 'Ġjuice', 'Ġon', 'Ġhis', 'Ġcereal', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 05:22:27 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Target: ['<|bos|>', 'ĠOrange', 'Ġjuice', 'Ġis', 'Ġpoured', 'Ġin', 'Ġa', 'Ġglass', '.', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 05:22:27 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Labels: ['ĠOrange', 'Ġjuice', 'Ġis', 'Ġpoured', 'Ġin', 'Ġa', 'Ġglass', '.', '<|endoftext|>']
+[03/12/2021 05:22:27 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 1, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/12/2021 05:22:27 - INFO - root] Input: ['ĠHe', 'Ġpoured', 'Ġorange', 'Ġjuice', 'Ġon', 'Ġhis', 'Ġcereal', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 05:22:27 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Target: ['<|bos|>', 'ĠOrange', 'Ġjuice', 'Ġdoes', 'Ġnot', 'Ġtaste', 'Ġgood', 'Ġon', 'Ġcereal', '.', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 05:22:27 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 05:22:27 - INFO - root] Labels: ['ĠOrange', 'Ġjuice', 'Ġdoes', 'Ġnot', 'Ġtaste', 'Ġgood', 'Ġon', 'Ġcereal', '.', '<|endoftext|>']
+[03/12/2021 05:22:27 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/12/2021 05:22:27 - INFO - root] ***** Running training *****
+[03/12/2021 05:22:27 - INFO - root]   Num examples = 30000
+[03/12/2021 05:22:27 - INFO - root]   Num Epochs = 3
+[03/12/2021 05:22:27 - INFO - root]   Instantaneous batch size per GPU = 16
+[03/12/2021 05:22:27 - INFO - root]   Total train batch size (w. parallel, distributed & accumulation) = 16
+[03/12/2021 05:22:27 - INFO - root]   Gradient Accumulation steps = 1
+[03/12/2021 05:22:27 - INFO - root]   Total optimization steps = 5625
+[03/12/2021 05:24:18 - INFO - root] Step: 20 | Loss: 13.9963 | Gen loss: 11.2875 | Gate Loss: 0.0298 | Triple Loss: 0.1083
+[03/12/2021 05:26:03 - INFO - root] Step: 40 | Loss: 11.4871 | Gen loss: 11.3367 | Gate Loss: 0.0233 | Triple Loss: 0.0348
+[03/12/2021 05:27:48 - INFO - root] Step: 60 | Loss: 10.9446 | Gen loss: 8.0915 | Gate Loss: 0.0169 | Triple Loss: 0.1184
+[03/12/2021 05:29:31 - INFO - root] Step: 80 | Loss: 6.8067 | Gen loss: 4.9233 | Gate Loss: 0.0107 | Triple Loss: 0.0317
+[03/12/2021 05:31:14 - INFO - root] Step: 100 | Loss: 4.3438 | Gen loss: 3.6829 | Gate Loss: 0.0257 | Triple Loss: 0.0408
+[03/12/2021 05:32:58 - INFO - root] Step: 120 | Loss: 3.7328 | Gen loss: 3.5177 | Gate Loss: 0.0062 | Triple Loss: 0.0162
+[03/12/2021 05:34:40 - INFO - root] Step: 140 | Loss: 3.5391 | Gen loss: 3.5225 | Gate Loss: 0.0298 | Triple Loss: 0.0319
+[03/12/2021 05:36:23 - INFO - root] Step: 160 | Loss: 3.2399 | Gen loss: 3.0332 | Gate Loss: 0.0164 | Triple Loss: 0.0260
+[03/12/2021 05:38:06 - INFO - root] Step: 180 | Loss: 3.0388 | Gen loss: 2.9363 | Gate Loss: 0.0153 | Triple Loss: 0.0166
+[03/12/2021 05:39:49 - INFO - root] Step: 200 | Loss: 2.9612 | Gen loss: 2.9146 | Gate Loss: 0.0136 | Triple Loss: 0.0152
+[03/12/2021 05:41:32 - INFO - root] Step: 220 | Loss: 2.8762 | Gen loss: 2.9515 | Gate Loss: 0.0205 | Triple Loss: 0.0236
+[03/12/2021 05:43:16 - INFO - root] Step: 240 | Loss: 2.7341 | Gen loss: 2.5808 | Gate Loss: 0.0206 | Triple Loss: 0.0309
+[03/12/2021 05:44:59 - INFO - root] Step: 260 | Loss: 2.7688 | Gen loss: 2.5481 | Gate Loss: 0.0076 | Triple Loss: 0.0167
+[03/12/2021 05:46:42 - INFO - root] Step: 280 | Loss: 2.6830 | Gen loss: 2.6630 | Gate Loss: 0.0073 | Triple Loss: 0.0106
+[03/12/2021 05:48:25 - INFO - root] Step: 300 | Loss: 2.7572 | Gen loss: 3.0926 | Gate Loss: 0.0247 | Triple Loss: 0.0311
+[03/12/2021 05:50:08 - INFO - root] Step: 320 | Loss: 2.7076 | Gen loss: 2.3585 | Gate Loss: 0.0101 | Triple Loss: 0.0177
+[03/12/2021 05:51:50 - INFO - root] Step: 340 | Loss: 2.6597 | Gen loss: 2.3266 | Gate Loss: 0.0092 | Triple Loss: 0.0204
+[03/12/2021 05:53:34 - INFO - root] Step: 360 | Loss: 2.6491 | Gen loss: 2.2905 | Gate Loss: 0.0218 | Triple Loss: 0.0119
+[03/12/2021 05:55:17 - INFO - root] Step: 380 | Loss: 2.5881 | Gen loss: 2.8267 | Gate Loss: 0.0247 | Triple Loss: 0.0160
+[03/12/2021 05:57:01 - INFO - root] Step: 400 | Loss: 2.6362 | Gen loss: 2.9750 | Gate Loss: 0.0179 | Triple Loss: 0.0139
+[03/12/2021 05:58:43 - INFO - root] Step: 420 | Loss: 2.6482 | Gen loss: 2.4310 | Gate Loss: 0.0020 | Triple Loss: 0.0110
+[03/12/2021 06:00:25 - INFO - root] Step: 440 | Loss: 2.6983 | Gen loss: 2.6736 | Gate Loss: 0.0068 | Triple Loss: 0.0228
+[03/12/2021 06:02:08 - INFO - root] Step: 460 | Loss: 2.6051 | Gen loss: 2.2456 | Gate Loss: 0.0115 | Triple Loss: 0.0066
+[03/12/2021 06:03:51 - INFO - root] Step: 480 | Loss: 2.6139 | Gen loss: 2.2619 | Gate Loss: 0.0187 | Triple Loss: 0.0221
+[03/12/2021 06:05:35 - INFO - root] Step: 500 | Loss: 2.5287 | Gen loss: 2.2594 | Gate Loss: 0.0000 | Triple Loss: 0.0017
+[03/12/2021 06:07:18 - INFO - root] Step: 520 | Loss: 2.5644 | Gen loss: 2.5145 | Gate Loss: 0.0054 | Triple Loss: 0.0094
+[03/12/2021 06:09:00 - INFO - root] Step: 540 | Loss: 2.5286 | Gen loss: 2.5274 | Gate Loss: 0.0077 | Triple Loss: 0.0123
+[03/12/2021 06:10:43 - INFO - root] Step: 560 | Loss: 2.6048 | Gen loss: 2.3609 | Gate Loss: 0.0123 | Triple Loss: 0.0132
+[03/12/2021 06:12:26 - INFO - root] Step: 580 | Loss: 2.6505 | Gen loss: 2.8967 | Gate Loss: 0.0208 | Triple Loss: 0.0184
+[03/12/2021 06:14:09 - INFO - root] Step: 600 | Loss: 2.6497 | Gen loss: 2.1513 | Gate Loss: 0.0078 | Triple Loss: 0.0089
+[03/12/2021 06:15:52 - INFO - root] Step: 620 | Loss: 2.4679 | Gen loss: 2.6374 | Gate Loss: 0.0069 | Triple Loss: 0.0202
+[03/12/2021 06:17:34 - INFO - root] Step: 640 | Loss: 2.5555 | Gen loss: 1.9426 | Gate Loss: 0.0211 | Triple Loss: 0.0127
+[03/12/2021 06:19:16 - INFO - root] Step: 660 | Loss: 2.5857 | Gen loss: 3.0054 | Gate Loss: 0.0150 | Triple Loss: 0.0238
+[03/12/2021 06:20:59 - INFO - root] Step: 680 | Loss: 2.5691 | Gen loss: 2.5784 | Gate Loss: 0.0101 | Triple Loss: 0.0151
+[03/12/2021 06:22:42 - INFO - root] Step: 700 | Loss: 2.4666 | Gen loss: 2.5316 | Gate Loss: 0.0216 | Triple Loss: 0.0179
+[03/12/2021 06:24:24 - INFO - root] Step: 720 | Loss: 2.5060 | Gen loss: 2.7033 | Gate Loss: 0.0205 | Triple Loss: 0.0227
+[03/12/2021 06:26:09 - INFO - root] Step: 740 | Loss: 2.5701 | Gen loss: 2.2800 | Gate Loss: 0.0066 | Triple Loss: 0.0132
+[03/12/2021 06:27:51 - INFO - root] Step: 760 | Loss: 2.6028 | Gen loss: 2.8262 | Gate Loss: 0.0164 | Triple Loss: 0.0158
+[03/12/2021 06:29:35 - INFO - root] Step: 780 | Loss: 2.4034 | Gen loss: 2.5601 | Gate Loss: 0.0168 | Triple Loss: 0.0093
+[03/12/2021 06:31:18 - INFO - root] Step: 800 | Loss: 2.4918 | Gen loss: 2.8736 | Gate Loss: 0.0230 | Triple Loss: 0.0153
+[03/12/2021 06:33:01 - INFO - root] Step: 820 | Loss: 2.5972 | Gen loss: 2.4578 | Gate Loss: 0.0131 | Triple Loss: 0.0160
+[03/12/2021 06:34:42 - INFO - root] Step: 840 | Loss: 2.5002 | Gen loss: 2.3868 | Gate Loss: 0.0131 | Triple Loss: 0.0266
+[03/12/2021 06:36:24 - INFO - root] Step: 860 | Loss: 2.4336 | Gen loss: 2.1346 | Gate Loss: 0.0191 | Triple Loss: 0.0268
+[03/12/2021 06:38:06 - INFO - root] Step: 880 | Loss: 2.4562 | Gen loss: 2.1571 | Gate Loss: 0.0219 | Triple Loss: 0.0290
+[03/12/2021 06:39:48 - INFO - root] Step: 900 | Loss: 2.4737 | Gen loss: 2.0263 | Gate Loss: 0.0126 | Triple Loss: 0.0157
+[03/12/2021 06:41:32 - INFO - root] Step: 920 | Loss: 2.4439 | Gen loss: 2.6580 | Gate Loss: 0.0040 | Triple Loss: 0.0154
+[03/12/2021 06:43:15 - INFO - root] Step: 940 | Loss: 2.5957 | Gen loss: 1.9543 | Gate Loss: 0.0066 | Triple Loss: 0.0164
+[03/12/2021 06:44:57 - INFO - root] Step: 960 | Loss: 2.3324 | Gen loss: 1.8850 | Gate Loss: 0.0063 | Triple Loss: 0.0173
+[03/12/2021 06:46:39 - INFO - root] Step: 980 | Loss: 2.4561 | Gen loss: 2.7171 | Gate Loss: 0.0132 | Triple Loss: 0.0171
+[03/12/2021 06:48:23 - INFO - root] Step: 1000 | Loss: 2.4719 | Gen loss: 2.7659 | Gate Loss: 0.0301 | Triple Loss: 0.0184
+[03/12/2021 06:50:05 - INFO - root] Step: 1020 | Loss: 2.5698 | Gen loss: 2.3444 | Gate Loss: 0.0180 | Triple Loss: 0.0218
+[03/12/2021 06:51:48 - INFO - root] Step: 1040 | Loss: 2.4071 | Gen loss: 2.4524 | Gate Loss: 0.0108 | Triple Loss: 0.0185
+[03/12/2021 06:53:30 - INFO - root] Step: 1060 | Loss: 2.4886 | Gen loss: 2.1571 | Gate Loss: 0.0180 | Triple Loss: 0.0185
+[03/12/2021 06:55:12 - INFO - root] Step: 1080 | Loss: 2.4505 | Gen loss: 2.3110 | Gate Loss: 0.0120 | Triple Loss: 0.0058
+[03/12/2021 06:56:56 - INFO - root] Step: 1100 | Loss: 2.4673 | Gen loss: 2.4600 | Gate Loss: 0.0194 | Triple Loss: 0.0233
+[03/12/2021 06:58:38 - INFO - root] Step: 1120 | Loss: 2.4712 | Gen loss: 2.4619 | Gate Loss: 0.0081 | Triple Loss: 0.0173
+[03/12/2021 07:00:21 - INFO - root] Step: 1140 | Loss: 2.4850 | Gen loss: 2.4291 | Gate Loss: 0.0168 | Triple Loss: 0.0122
+[03/12/2021 07:02:03 - INFO - root] Step: 1160 | Loss: 2.4348 | Gen loss: 2.6063 | Gate Loss: 0.0269 | Triple Loss: 0.0289
+[03/12/2021 07:03:46 - INFO - root] Step: 1180 | Loss: 2.4619 | Gen loss: 1.8898 | Gate Loss: 0.0095 | Triple Loss: 0.0256
+[03/12/2021 07:05:29 - INFO - root] Step: 1200 | Loss: 2.4061 | Gen loss: 2.1286 | Gate Loss: 0.0072 | Triple Loss: 0.0092
+[03/12/2021 07:07:12 - INFO - root] Step: 1220 | Loss: 2.4333 | Gen loss: 2.7629 | Gate Loss: 0.0152 | Triple Loss: 0.0240
+[03/12/2021 07:08:55 - INFO - root] Step: 1240 | Loss: 2.4032 | Gen loss: 2.2539 | Gate Loss: 0.0076 | Triple Loss: 0.0090
+[03/12/2021 07:10:37 - INFO - root] Step: 1260 | Loss: 2.3625 | Gen loss: 2.0573 | Gate Loss: 0.0183 | Triple Loss: 0.0255
+[03/12/2021 07:12:21 - INFO - root] Step: 1280 | Loss: 2.4735 | Gen loss: 2.3873 | Gate Loss: 0.0190 | Triple Loss: 0.0172
+[03/12/2021 07:14:04 - INFO - root] Step: 1300 | Loss: 2.4740 | Gen loss: 2.3034 | Gate Loss: 0.0167 | Triple Loss: 0.0137
+[03/12/2021 07:15:47 - INFO - root] Step: 1320 | Loss: 2.5033 | Gen loss: 2.2530 | Gate Loss: 0.0161 | Triple Loss: 0.0104
+[03/12/2021 07:17:30 - INFO - root] Step: 1340 | Loss: 2.3525 | Gen loss: 2.5673 | Gate Loss: 0.0086 | Triple Loss: 0.0104
+[03/12/2021 07:19:12 - INFO - root] Step: 1360 | Loss: 2.4346 | Gen loss: 1.7850 | Gate Loss: 0.0090 | Triple Loss: 0.0134
+[03/12/2021 07:20:55 - INFO - root] Step: 1380 | Loss: 2.5577 | Gen loss: 2.4841 | Gate Loss: 0.0280 | Triple Loss: 0.0257
+[03/12/2021 07:22:37 - INFO - root] Step: 1400 | Loss: 2.4550 | Gen loss: 2.6991 | Gate Loss: 0.0133 | Triple Loss: 0.0111
+[03/12/2021 07:24:20 - INFO - root] Step: 1420 | Loss: 2.3932 | Gen loss: 2.1740 | Gate Loss: 0.0210 | Triple Loss: 0.0204
+[03/12/2021 07:26:03 - INFO - root] Step: 1440 | Loss: 2.4380 | Gen loss: 2.3863 | Gate Loss: 0.0133 | Triple Loss: 0.0063
+[03/12/2021 07:27:46 - INFO - root] Step: 1460 | Loss: 2.4515 | Gen loss: 2.9857 | Gate Loss: 0.0170 | Triple Loss: 0.0213
+[03/12/2021 07:29:29 - INFO - root] Step: 1480 | Loss: 2.3739 | Gen loss: 2.5201 | Gate Loss: 0.0178 | Triple Loss: 0.0183
+[03/12/2021 07:31:12 - INFO - root] Step: 1500 | Loss: 2.3869 | Gen loss: 1.8044 | Gate Loss: 0.0032 | Triple Loss: 0.0065
+[03/12/2021 07:32:54 - INFO - root] Step: 1520 | Loss: 2.3753 | Gen loss: 2.3938 | Gate Loss: 0.0155 | Triple Loss: 0.0068
+[03/12/2021 07:34:37 - INFO - root] Step: 1540 | Loss: 2.3889 | Gen loss: 2.4383 | Gate Loss: 0.0156 | Triple Loss: 0.0115
+[03/12/2021 07:36:19 - INFO - root] Step: 1560 | Loss: 2.5449 | Gen loss: 2.5499 | Gate Loss: 0.0123 | Triple Loss: 0.0093
+[03/12/2021 07:38:02 - INFO - root] Step: 1580 | Loss: 2.3248 | Gen loss: 2.1912 | Gate Loss: 0.0219 | Triple Loss: 0.0198
+[03/12/2021 07:39:45 - INFO - root] Step: 1600 | Loss: 2.3715 | Gen loss: 2.2322 | Gate Loss: 0.0071 | Triple Loss: 0.0069
+[03/12/2021 07:41:28 - INFO - root] Step: 1620 | Loss: 2.5324 | Gen loss: 2.2360 | Gate Loss: 0.0144 | Triple Loss: 0.0117
+[03/12/2021 07:43:11 - INFO - root] Step: 1640 | Loss: 2.4795 | Gen loss: 2.4133 | Gate Loss: 0.0263 | Triple Loss: 0.0250
+[03/12/2021 07:44:53 - INFO - root] Step: 1660 | Loss: 2.3428 | Gen loss: 2.0634 | Gate Loss: 0.0322 | Triple Loss: 0.0134
+[03/12/2021 07:46:36 - INFO - root] Step: 1680 | Loss: 2.4397 | Gen loss: 2.4474 | Gate Loss: 0.0124 | Triple Loss: 0.0236
+[03/12/2021 07:48:19 - INFO - root] Step: 1700 | Loss: 2.3765 | Gen loss: 2.5703 | Gate Loss: 0.0146 | Triple Loss: 0.0198
+[03/12/2021 07:50:01 - INFO - root] Step: 1720 | Loss: 2.2523 | Gen loss: 2.1908 | Gate Loss: 0.0204 | Triple Loss: 0.0116
+[03/12/2021 07:51:44 - INFO - root] Step: 1740 | Loss: 2.3017 | Gen loss: 2.2400 | Gate Loss: 0.0105 | Triple Loss: 0.0224
+[03/12/2021 07:53:26 - INFO - root] Step: 1760 | Loss: 2.3595 | Gen loss: 2.2368 | Gate Loss: 0.0116 | Triple Loss: 0.0136
+[03/12/2021 07:55:08 - INFO - root] Step: 1780 | Loss: 2.3716 | Gen loss: 2.2601 | Gate Loss: 0.0132 | Triple Loss: 0.0116
+[03/12/2021 07:56:51 - INFO - root] Step: 1800 | Loss: 2.2834 | Gen loss: 1.9977 | Gate Loss: 0.0043 | Triple Loss: 0.0054
+[03/12/2021 07:58:34 - INFO - root] Step: 1820 | Loss: 2.3652 | Gen loss: 2.6421 | Gate Loss: 0.0028 | Triple Loss: 0.0081
+[03/12/2021 08:00:17 - INFO - root] Step: 1840 | Loss: 2.3058 | Gen loss: 2.2072 | Gate Loss: 0.0137 | Triple Loss: 0.0269
+[03/12/2021 08:02:00 - INFO - root] Step: 1860 | Loss: 2.4464 | Gen loss: 2.1363 | Gate Loss: 0.0216 | Triple Loss: 0.0195
+[03/12/2021 08:03:07 - INFO - transformers.configuration_utils] Configuration saved in ../models/comve/grf-comve_e3_lr2-4_eps-5/config.json
+[03/12/2021 08:03:08 - INFO - transformers.modeling_utils] Model weights saved in ../models/comve/grf-comve_e3_lr2-4_eps-5/pytorch_model.bin
+[03/12/2021 08:03:11 - INFO - root] Saving model checkpoint to ../models/comve/grf-comve_e3_lr2-4_eps-5
+[03/12/2021 08:03:43 - INFO - root] Step: 1880 | Loss: 2.3597 | Gen loss: 1.8633 | Gate Loss: 0.0238 | Triple Loss: 0.0265
+[03/12/2021 08:05:26 - INFO - root] Step: 1900 | Loss: 2.0477 | Gen loss: 1.7357 | Gate Loss: 0.0065 | Triple Loss: 0.0172
+[03/12/2021 08:07:10 - INFO - root] Step: 1920 | Loss: 1.9390 | Gen loss: 1.7951 | Gate Loss: 0.0101 | Triple Loss: 0.0206
+[03/12/2021 08:08:52 - INFO - root] Step: 1940 | Loss: 1.9462 | Gen loss: 1.6929 | Gate Loss: 0.0020 | Triple Loss: 0.0235
+[03/12/2021 08:10:36 - INFO - root] Step: 1960 | Loss: 1.9544 | Gen loss: 2.2667 | Gate Loss: 0.0123 | Triple Loss: 0.0163
+[03/12/2021 08:12:20 - INFO - root] Step: 1980 | Loss: 1.8798 | Gen loss: 1.8659 | Gate Loss: 0.0186 | Triple Loss: 0.0212
+[03/12/2021 08:14:03 - INFO - root] Step: 2000 | Loss: 1.9144 | Gen loss: 1.6663 | Gate Loss: 0.0162 | Triple Loss: 0.0223
+[03/12/2021 08:15:46 - INFO - root] Step: 2020 | Loss: 1.9357 | Gen loss: 1.6900 | Gate Loss: 0.0096 | Triple Loss: 0.0117
+[03/12/2021 08:17:29 - INFO - root] Step: 2040 | Loss: 1.9195 | Gen loss: 1.7792 | Gate Loss: 0.0181 | Triple Loss: 0.0345
+[03/12/2021 08:19:13 - INFO - root] Step: 2060 | Loss: 1.9888 | Gen loss: 1.9966 | Gate Loss: 0.0156 | Triple Loss: 0.0161
+[03/12/2021 08:20:56 - INFO - root] Step: 2080 | Loss: 1.9900 | Gen loss: 1.8859 | Gate Loss: 0.0072 | Triple Loss: 0.0130
+[03/12/2021 08:22:39 - INFO - root] Step: 2100 | Loss: 2.0358 | Gen loss: 2.0126 | Gate Loss: 0.0104 | Triple Loss: 0.0144
+[03/12/2021 08:24:23 - INFO - root] Step: 2120 | Loss: 1.9021 | Gen loss: 1.9685 | Gate Loss: 0.0113 | Triple Loss: 0.0118
+[03/12/2021 08:26:06 - INFO - root] Step: 2140 | Loss: 1.9826 | Gen loss: 1.7786 | Gate Loss: 0.0087 | Triple Loss: 0.0231
+[03/12/2021 08:27:48 - INFO - root] Step: 2160 | Loss: 2.0324 | Gen loss: 1.9963 | Gate Loss: 0.0086 | Triple Loss: 0.0169
+[03/12/2021 08:29:31 - INFO - root] Step: 2180 | Loss: 2.0405 | Gen loss: 1.9308 | Gate Loss: 0.0274 | Triple Loss: 0.0185
+[03/12/2021 08:31:15 - INFO - root] Step: 2200 | Loss: 1.9688 | Gen loss: 1.9300 | Gate Loss: 0.0214 | Triple Loss: 0.0172
+[03/12/2021 08:32:58 - INFO - root] Step: 2220 | Loss: 1.9575 | Gen loss: 1.5226 | Gate Loss: 0.0042 | Triple Loss: 0.0075
+[03/12/2021 08:34:41 - INFO - root] Step: 2240 | Loss: 1.9272 | Gen loss: 2.2517 | Gate Loss: 0.0209 | Triple Loss: 0.0157
+[03/12/2021 08:36:25 - INFO - root] Step: 2260 | Loss: 2.0094 | Gen loss: 1.6292 | Gate Loss: 0.0066 | Triple Loss: 0.0164
+[03/12/2021 08:38:08 - INFO - root] Step: 2280 | Loss: 1.9406 | Gen loss: 1.9698 | Gate Loss: 0.0187 | Triple Loss: 0.0156
+[03/12/2021 08:39:51 - INFO - root] Step: 2300 | Loss: 2.0665 | Gen loss: 1.9690 | Gate Loss: 0.0113 | Triple Loss: 0.0124
+[03/12/2021 08:41:34 - INFO - root] Step: 2320 | Loss: 2.0210 | Gen loss: 1.7796 | Gate Loss: 0.0107 | Triple Loss: 0.0086
+[03/12/2021 08:43:18 - INFO - root] Step: 2340 | Loss: 1.9819 | Gen loss: 1.8639 | Gate Loss: 0.0129 | Triple Loss: 0.0109
+[03/12/2021 08:45:00 - INFO - root] Step: 2360 | Loss: 1.9358 | Gen loss: 1.8484 | Gate Loss: 0.0109 | Triple Loss: 0.0186
+[03/12/2021 08:46:43 - INFO - root] Step: 2380 | Loss: 2.0292 | Gen loss: 1.8957 | Gate Loss: 0.0130 | Triple Loss: 0.0095
+[03/12/2021 08:48:26 - INFO - root] Step: 2400 | Loss: 2.0077 | Gen loss: 2.1602 | Gate Loss: 0.0175 | Triple Loss: 0.0126
+[03/12/2021 08:50:09 - INFO - root] Step: 2420 | Loss: 2.0516 | Gen loss: 2.1806 | Gate Loss: 0.0257 | Triple Loss: 0.0241
+[03/12/2021 08:51:52 - INFO - root] Step: 2440 | Loss: 1.9466 | Gen loss: 1.9987 | Gate Loss: 0.0096 | Triple Loss: 0.0075
+[03/12/2021 08:53:36 - INFO - root] Step: 2460 | Loss: 1.9446 | Gen loss: 1.4620 | Gate Loss: 0.0176 | Triple Loss: 0.0145
+[03/12/2021 08:55:19 - INFO - root] Step: 2480 | Loss: 1.9755 | Gen loss: 1.9974 | Gate Loss: 0.0077 | Triple Loss: 0.0121
+[03/12/2021 08:57:02 - INFO - root] Step: 2500 | Loss: 1.9928 | Gen loss: 2.0565 | Gate Loss: 0.0128 | Triple Loss: 0.0233
+[03/12/2021 08:58:45 - INFO - root] Step: 2520 | Loss: 1.9240 | Gen loss: 1.5426 | Gate Loss: 0.0088 | Triple Loss: 0.0183
+[03/12/2021 09:00:29 - INFO - root] Step: 2540 | Loss: 1.9708 | Gen loss: 1.9177 | Gate Loss: 0.0132 | Triple Loss: 0.0152
+[03/12/2021 09:02:12 - INFO - root] Step: 2560 | Loss: 1.9576 | Gen loss: 1.7227 | Gate Loss: 0.0170 | Triple Loss: 0.0182
+[03/12/2021 09:03:54 - INFO - root] Step: 2580 | Loss: 1.9372 | Gen loss: 1.9397 | Gate Loss: 0.0068 | Triple Loss: 0.0221
+[03/12/2021 09:05:37 - INFO - root] Step: 2600 | Loss: 2.0774 | Gen loss: 1.8019 | Gate Loss: 0.0125 | Triple Loss: 0.0136
+[03/12/2021 09:07:20 - INFO - root] Step: 2620 | Loss: 2.0557 | Gen loss: 1.8645 | Gate Loss: 0.0146 | Triple Loss: 0.0112
+[03/12/2021 09:09:02 - INFO - root] Step: 2640 | Loss: 1.9370 | Gen loss: 1.6841 | Gate Loss: 0.0060 | Triple Loss: 0.0208
+[03/12/2021 09:10:45 - INFO - root] Step: 2660 | Loss: 1.8982 | Gen loss: 1.9176 | Gate Loss: 0.0161 | Triple Loss: 0.0228
+[03/12/2021 09:12:28 - INFO - root] Step: 2680 | Loss: 1.9979 | Gen loss: 1.7629 | Gate Loss: 0.0095 | Triple Loss: 0.0208
+[03/12/2021 09:14:12 - INFO - root] Step: 2700 | Loss: 2.0704 | Gen loss: 2.0845 | Gate Loss: 0.0148 | Triple Loss: 0.0336
+[03/12/2021 09:15:55 - INFO - root] Step: 2720 | Loss: 1.9999 | Gen loss: 1.9513 | Gate Loss: 0.0139 | Triple Loss: 0.0217
+[03/12/2021 09:17:37 - INFO - root] Step: 2740 | Loss: 1.9899 | Gen loss: 1.9381 | Gate Loss: 0.0129 | Triple Loss: 0.0094
+[03/12/2021 09:19:20 - INFO - root] Step: 2760 | Loss: 2.0105 | Gen loss: 1.9382 | Gate Loss: 0.0120 | Triple Loss: 0.0102
+[03/12/2021 09:21:03 - INFO - root] Step: 2780 | Loss: 2.0053 | Gen loss: 2.4209 | Gate Loss: 0.0210 | Triple Loss: 0.0157
+[03/12/2021 09:22:45 - INFO - root] Step: 2800 | Loss: 1.9816 | Gen loss: 1.9585 | Gate Loss: 0.0240 | Triple Loss: 0.0103
+[03/12/2021 09:24:29 - INFO - root] Step: 2820 | Loss: 1.9815 | Gen loss: 1.6420 | Gate Loss: 0.0183 | Triple Loss: 0.0114
+[03/12/2021 09:26:12 - INFO - root] Step: 2840 | Loss: 1.9571 | Gen loss: 2.1118 | Gate Loss: 0.0084 | Triple Loss: 0.0162
+[03/12/2021 09:27:57 - INFO - root] Step: 2860 | Loss: 1.9364 | Gen loss: 2.2689 | Gate Loss: 0.0182 | Triple Loss: 0.0154
+[03/12/2021 09:29:39 - INFO - root] Step: 2880 | Loss: 1.9278 | Gen loss: 1.6231 | Gate Loss: 0.0031 | Triple Loss: 0.0082
+[03/12/2021 09:31:22 - INFO - root] Step: 2900 | Loss: 2.0852 | Gen loss: 2.0713 | Gate Loss: 0.0056 | Triple Loss: 0.0074
+[03/12/2021 09:33:05 - INFO - root] Step: 2920 | Loss: 1.9422 | Gen loss: 2.0893 | Gate Loss: 0.0143 | Triple Loss: 0.0226
+[03/12/2021 09:34:47 - INFO - root] Step: 2940 | Loss: 1.9451 | Gen loss: 1.8361 | Gate Loss: 0.0154 | Triple Loss: 0.0241
+[03/12/2021 09:36:30 - INFO - root] Step: 2960 | Loss: 2.0348 | Gen loss: 1.7695 | Gate Loss: 0.0113 | Triple Loss: 0.0125
+[03/12/2021 09:38:13 - INFO - root] Step: 2980 | Loss: 2.0052 | Gen loss: 1.6462 | Gate Loss: 0.0090 | Triple Loss: 0.0201
+[03/12/2021 09:39:56 - INFO - root] Step: 3000 | Loss: 1.9403 | Gen loss: 2.2039 | Gate Loss: 0.0095 | Triple Loss: 0.0203
+[03/12/2021 09:41:39 - INFO - root] Step: 3020 | Loss: 1.9485 | Gen loss: 1.9383 | Gate Loss: 0.0183 | Triple Loss: 0.0216
+[03/12/2021 09:43:23 - INFO - root] Step: 3040 | Loss: 2.0127 | Gen loss: 2.1189 | Gate Loss: 0.0206 | Triple Loss: 0.0413
+[03/12/2021 09:45:07 - INFO - root] Step: 3060 | Loss: 1.9867 | Gen loss: 1.9725 | Gate Loss: 0.0175 | Triple Loss: 0.0225
+[03/12/2021 09:46:51 - INFO - root] Step: 3080 | Loss: 1.9018 | Gen loss: 1.5552 | Gate Loss: 0.0154 | Triple Loss: 0.0239
+[03/12/2021 09:48:33 - INFO - root] Step: 3100 | Loss: 2.0089 | Gen loss: 2.0553 | Gate Loss: 0.0079 | Triple Loss: 0.0109
+[03/12/2021 09:50:16 - INFO - root] Step: 3120 | Loss: 1.9954 | Gen loss: 1.8676 | Gate Loss: 0.0114 | Triple Loss: 0.0180
+[03/12/2021 09:51:59 - INFO - root] Step: 3140 | Loss: 2.0274 | Gen loss: 1.9854 | Gate Loss: 0.0134 | Triple Loss: 0.0225
+[03/12/2021 09:53:42 - INFO - root] Step: 3160 | Loss: 1.9486 | Gen loss: 2.0317 | Gate Loss: 0.0053 | Triple Loss: 0.0098
+[03/12/2021 09:55:25 - INFO - root] Step: 3180 | Loss: 1.9429 | Gen loss: 1.9103 | Gate Loss: 0.0015 | Triple Loss: 0.0034
+[03/12/2021 09:57:08 - INFO - root] Step: 3200 | Loss: 1.9724 | Gen loss: 2.1114 | Gate Loss: 0.0228 | Triple Loss: 0.0167
+[03/12/2021 09:58:52 - INFO - root] Step: 3220 | Loss: 1.9439 | Gen loss: 2.1659 | Gate Loss: 0.0192 | Triple Loss: 0.0177
+[03/12/2021 10:00:34 - INFO - root] Step: 3240 | Loss: 2.0083 | Gen loss: 1.6521 | Gate Loss: 0.0159 | Triple Loss: 0.0132
+[03/12/2021 10:02:17 - INFO - root] Step: 3260 | Loss: 1.9566 | Gen loss: 1.9100 | Gate Loss: 0.0336 | Triple Loss: 0.0219
+[03/12/2021 10:04:01 - INFO - root] Step: 3280 | Loss: 1.9661 | Gen loss: 1.8669 | Gate Loss: 0.0113 | Triple Loss: 0.0065
+[03/12/2021 10:05:45 - INFO - root] Step: 3300 | Loss: 2.0464 | Gen loss: 1.9137 | Gate Loss: 0.0051 | Triple Loss: 0.0115
+[03/12/2021 10:07:27 - INFO - root] Step: 3320 | Loss: 1.9390 | Gen loss: 2.0948 | Gate Loss: 0.0119 | Triple Loss: 0.0113
+[03/12/2021 10:09:10 - INFO - root] Step: 3340 | Loss: 1.9151 | Gen loss: 2.0349 | Gate Loss: 0.0196 | Triple Loss: 0.0314
+[03/12/2021 10:10:53 - INFO - root] Step: 3360 | Loss: 1.9432 | Gen loss: 2.2524 | Gate Loss: 0.0134 | Triple Loss: 0.0054
+[03/12/2021 10:12:36 - INFO - root] Step: 3380 | Loss: 1.9359 | Gen loss: 2.2457 | Gate Loss: 0.0161 | Triple Loss: 0.0185
+[03/12/2021 10:14:19 - INFO - root] Step: 3400 | Loss: 1.9219 | Gen loss: 1.9555 | Gate Loss: 0.0172 | Triple Loss: 0.0192
+[03/12/2021 10:16:01 - INFO - root] Step: 3420 | Loss: 1.9605 | Gen loss: 1.6756 | Gate Loss: 0.0054 | Triple Loss: 0.0121
+[03/12/2021 10:17:44 - INFO - root] Step: 3440 | Loss: 1.8814 | Gen loss: 1.6992 | Gate Loss: 0.0088 | Triple Loss: 0.0065
+[03/12/2021 10:19:27 - INFO - root] Step: 3460 | Loss: 2.0084 | Gen loss: 1.7875 | Gate Loss: 0.0185 | Triple Loss: 0.0147
+[03/12/2021 10:21:10 - INFO - root] Step: 3480 | Loss: 1.9683 | Gen loss: 1.6883 | Gate Loss: 0.0144 | Triple Loss: 0.0154
+[03/12/2021 10:22:53 - INFO - root] Step: 3500 | Loss: 1.9717 | Gen loss: 2.2222 | Gate Loss: 0.0197 | Triple Loss: 0.0215
+[03/12/2021 10:24:36 - INFO - root] Step: 3520 | Loss: 1.8296 | Gen loss: 2.2822 | Gate Loss: 0.0284 | Triple Loss: 0.0173
+[03/12/2021 10:26:20 - INFO - root] Step: 3540 | Loss: 1.9083 | Gen loss: 1.7214 | Gate Loss: 0.0141 | Triple Loss: 0.0113
+[03/12/2021 10:28:03 - INFO - root] Step: 3560 | Loss: 2.0089 | Gen loss: 1.9610 | Gate Loss: 0.0110 | Triple Loss: 0.0163
+[03/12/2021 10:29:46 - INFO - root] Step: 3580 | Loss: 1.9814 | Gen loss: 1.6457 | Gate Loss: 0.0179 | Triple Loss: 0.0145
+[03/12/2021 10:31:30 - INFO - root] Step: 3600 | Loss: 1.9956 | Gen loss: 1.9876 | Gate Loss: 0.0207 | Triple Loss: 0.0114
+[03/12/2021 10:33:13 - INFO - root] Step: 3620 | Loss: 1.9342 | Gen loss: 2.0736 | Gate Loss: 0.0151 | Triple Loss: 0.0166
+[03/12/2021 10:34:56 - INFO - root] Step: 3640 | Loss: 2.0048 | Gen loss: 2.2639 | Gate Loss: 0.0104 | Triple Loss: 0.0216
+[03/12/2021 10:36:40 - INFO - root] Step: 3660 | Loss: 1.8648 | Gen loss: 1.8686 | Gate Loss: 0.0110 | Triple Loss: 0.0151
+[03/12/2021 10:38:22 - INFO - root] Step: 3680 | Loss: 1.9567 | Gen loss: 1.9721 | Gate Loss: 0.0082 | Triple Loss: 0.0100
+[03/12/2021 10:40:05 - INFO - root] Step: 3700 | Loss: 1.9487 | Gen loss: 1.7849 | Gate Loss: 0.0132 | Triple Loss: 0.0125
+[03/12/2021 10:41:47 - INFO - root] Step: 3720 | Loss: 1.9606 | Gen loss: 1.8343 | Gate Loss: 0.0095 | Triple Loss: 0.0115
+[03/12/2021 10:43:28 - INFO - root] Step: 3740 | Loss: 1.9111 | Gen loss: 1.6747 | Gate Loss: 0.0209 | Triple Loss: 0.0394
+[03/12/2021 10:44:13 - INFO - transformers.configuration_utils] Configuration saved in ../models/comve/grf-comve_e3_lr2-4_eps-5/config.json
+[03/12/2021 10:44:17 - INFO - transformers.modeling_utils] Model weights saved in ../models/comve/grf-comve_e3_lr2-4_eps-5/pytorch_model.bin
+[03/12/2021 10:44:26 - INFO - root] Saving model checkpoint to ../models/comve/grf-comve_e3_lr2-4_eps-5
+[03/12/2021 10:45:24 - INFO - root] Step: 3760 | Loss: 1.7722 | Gen loss: 1.3131 | Gate Loss: 0.0078 | Triple Loss: 0.0146
+[03/12/2021 10:47:08 - INFO - root] Step: 3780 | Loss: 1.6973 | Gen loss: 2.3359 | Gate Loss: 0.0148 | Triple Loss: 0.0114
+[03/12/2021 10:48:51 - INFO - root] Step: 3800 | Loss: 1.6837 | Gen loss: 1.5605 | Gate Loss: 0.0103 | Triple Loss: 0.0124
+[03/12/2021 10:50:34 - INFO - root] Step: 3820 | Loss: 1.6077 | Gen loss: 1.5830 | Gate Loss: 0.0243 | Triple Loss: 0.0206
+[03/12/2021 10:52:18 - INFO - root] Step: 3840 | Loss: 1.5980 | Gen loss: 1.5663 | Gate Loss: 0.0093 | Triple Loss: 0.0193
+[03/12/2021 10:54:01 - INFO - root] Step: 3860 | Loss: 1.5786 | Gen loss: 1.3402 | Gate Loss: 0.0187 | Triple Loss: 0.0160
+[03/12/2021 10:55:44 - INFO - root] Step: 3880 | Loss: 1.5676 | Gen loss: 1.1762 | Gate Loss: 0.0212 | Triple Loss: 0.0195
+[03/12/2021 10:57:27 - INFO - root] Step: 3900 | Loss: 1.6245 | Gen loss: 1.5953 | Gate Loss: 0.0204 | Triple Loss: 0.0224
+[03/12/2021 10:59:09 - INFO - root] Step: 3920 | Loss: 1.5699 | Gen loss: 1.6636 | Gate Loss: 0.0192 | Triple Loss: 0.0161
+[03/12/2021 11:00:52 - INFO - root] Step: 3940 | Loss: 1.5620 | Gen loss: 1.6938 | Gate Loss: 0.0147 | Triple Loss: 0.0235
+[03/12/2021 11:02:36 - INFO - root] Step: 3960 | Loss: 1.6275 | Gen loss: 1.7595 | Gate Loss: 0.0127 | Triple Loss: 0.0188
+[03/12/2021 11:04:20 - INFO - root] Step: 3980 | Loss: 1.6251 | Gen loss: 1.8016 | Gate Loss: 0.0090 | Triple Loss: 0.0182
+[03/12/2021 11:06:03 - INFO - root] Step: 4000 | Loss: 1.5672 | Gen loss: 1.7010 | Gate Loss: 0.0194 | Triple Loss: 0.0187
+[03/12/2021 11:07:45 - INFO - root] Step: 4020 | Loss: 1.5279 | Gen loss: 1.5574 | Gate Loss: 0.0188 | Triple Loss: 0.0179
+[03/12/2021 11:09:29 - INFO - root] Step: 4040 | Loss: 1.6428 | Gen loss: 1.9584 | Gate Loss: 0.0130 | Triple Loss: 0.0249
+[03/12/2021 11:11:12 - INFO - root] Step: 4060 | Loss: 1.5351 | Gen loss: 1.4211 | Gate Loss: 0.0132 | Triple Loss: 0.0124
+[03/12/2021 11:12:55 - INFO - root] Step: 4080 | Loss: 1.5931 | Gen loss: 1.6391 | Gate Loss: 0.0124 | Triple Loss: 0.0109
+[03/12/2021 11:14:38 - INFO - root] Step: 4100 | Loss: 1.6132 | Gen loss: 1.2787 | Gate Loss: 0.0187 | Triple Loss: 0.0118
+[03/12/2021 11:16:20 - INFO - root] Step: 4120 | Loss: 1.6347 | Gen loss: 1.3348 | Gate Loss: 0.0191 | Triple Loss: 0.0163
+[03/12/2021 11:18:03 - INFO - root] Step: 4140 | Loss: 1.5764 | Gen loss: 1.4876 | Gate Loss: 0.0122 | Triple Loss: 0.0191
+[03/12/2021 11:19:46 - INFO - root] Step: 4160 | Loss: 1.6253 | Gen loss: 1.3430 | Gate Loss: 0.0073 | Triple Loss: 0.0077
+[03/12/2021 11:21:30 - INFO - root] Step: 4180 | Loss: 1.6546 | Gen loss: 1.6789 | Gate Loss: 0.0155 | Triple Loss: 0.0194
+[03/12/2021 11:23:13 - INFO - root] Step: 4200 | Loss: 1.5243 | Gen loss: 1.3123 | Gate Loss: 0.0047 | Triple Loss: 0.0117
+[03/12/2021 11:24:57 - INFO - root] Step: 4220 | Loss: 1.5387 | Gen loss: 1.7725 | Gate Loss: 0.0215 | Triple Loss: 0.0159
+[03/12/2021 11:26:41 - INFO - root] Step: 4240 | Loss: 1.6279 | Gen loss: 1.5363 | Gate Loss: 0.0095 | Triple Loss: 0.0173
+[03/12/2021 11:28:24 - INFO - root] Step: 4260 | Loss: 1.6248 | Gen loss: 1.5417 | Gate Loss: 0.0130 | Triple Loss: 0.0175
+[03/12/2021 11:30:07 - INFO - root] Step: 4280 | Loss: 1.6580 | Gen loss: 1.4382 | Gate Loss: 0.0118 | Triple Loss: 0.0106
+[03/12/2021 11:31:50 - INFO - root] Step: 4300 | Loss: 1.6199 | Gen loss: 1.4074 | Gate Loss: 0.0038 | Triple Loss: 0.0111
+[03/12/2021 11:33:34 - INFO - root] Step: 4320 | Loss: 1.6299 | Gen loss: 1.4939 | Gate Loss: 0.0188 | Triple Loss: 0.0297
+[03/12/2021 11:35:16 - INFO - root] Step: 4340 | Loss: 1.6128 | Gen loss: 1.1503 | Gate Loss: 0.0032 | Triple Loss: 0.0093
+[03/12/2021 11:36:59 - INFO - root] Step: 4360 | Loss: 1.6392 | Gen loss: 1.8576 | Gate Loss: 0.0152 | Triple Loss: 0.0156
+[03/12/2021 11:38:42 - INFO - root] Step: 4380 | Loss: 1.6419 | Gen loss: 1.7916 | Gate Loss: 0.0180 | Triple Loss: 0.0233
+[03/12/2021 11:40:25 - INFO - root] Step: 4400 | Loss: 1.5574 | Gen loss: 1.7131 | Gate Loss: 0.0137 | Triple Loss: 0.0152
+[03/12/2021 11:42:08 - INFO - root] Step: 4420 | Loss: 1.6068 | Gen loss: 1.6531 | Gate Loss: 0.0016 | Triple Loss: 0.0109
+[03/12/2021 11:43:51 - INFO - root] Step: 4440 | Loss: 1.5684 | Gen loss: 1.4346 | Gate Loss: 0.0045 | Triple Loss: 0.0170
+[03/12/2021 11:45:35 - INFO - root] Step: 4460 | Loss: 1.5649 | Gen loss: 1.4460 | Gate Loss: 0.0034 | Triple Loss: 0.0078
+[03/12/2021 11:47:18 - INFO - root] Step: 4480 | Loss: 1.5579 | Gen loss: 1.6354 | Gate Loss: 0.0262 | Triple Loss: 0.0373
+[03/12/2021 11:49:02 - INFO - root] Step: 4500 | Loss: 1.5944 | Gen loss: 1.5385 | Gate Loss: 0.0151 | Triple Loss: 0.0168
+[03/12/2021 11:50:44 - INFO - root] Step: 4520 | Loss: 1.5536 | Gen loss: 1.3610 | Gate Loss: 0.0239 | Triple Loss: 0.0148
+[03/12/2021 11:52:27 - INFO - root] Step: 4540 | Loss: 1.5763 | Gen loss: 1.4677 | Gate Loss: 0.0246 | Triple Loss: 0.0197
+[03/12/2021 11:54:11 - INFO - root] Step: 4560 | Loss: 1.5708 | Gen loss: 1.6361 | Gate Loss: 0.0216 | Triple Loss: 0.0212
+[03/12/2021 11:55:54 - INFO - root] Step: 4580 | Loss: 1.6519 | Gen loss: 1.3714 | Gate Loss: 0.0085 | Triple Loss: 0.0140
+[03/12/2021 11:57:37 - INFO - root] Step: 4600 | Loss: 1.5927 | Gen loss: 1.4534 | Gate Loss: 0.0186 | Triple Loss: 0.0218
+[03/12/2021 11:59:21 - INFO - root] Step: 4620 | Loss: 1.5830 | Gen loss: 1.5521 | Gate Loss: 0.0154 | Triple Loss: 0.0139
+[03/12/2021 12:01:04 - INFO - root] Step: 4640 | Loss: 1.5957 | Gen loss: 1.3957 | Gate Loss: 0.0059 | Triple Loss: 0.0106
+[03/12/2021 12:02:47 - INFO - root] Step: 4660 | Loss: 1.5533 | Gen loss: 1.2100 | Gate Loss: 0.0103 | Triple Loss: 0.0123
+[03/12/2021 12:04:31 - INFO - root] Step: 4680 | Loss: 1.6109 | Gen loss: 1.5652 | Gate Loss: 0.0170 | Triple Loss: 0.0116
+[03/12/2021 12:06:15 - INFO - root] Step: 4700 | Loss: 1.5785 | Gen loss: 1.4968 | Gate Loss: 0.0053 | Triple Loss: 0.0090
+[03/12/2021 12:07:58 - INFO - root] Step: 4720 | Loss: 1.6543 | Gen loss: 1.4957 | Gate Loss: 0.0127 | Triple Loss: 0.0199
+[03/12/2021 12:09:42 - INFO - root] Step: 4740 | Loss: 1.5787 | Gen loss: 1.6579 | Gate Loss: 0.0184 | Triple Loss: 0.0116
+[03/12/2021 12:11:24 - INFO - root] Step: 4760 | Loss: 1.6660 | Gen loss: 1.5788 | Gate Loss: 0.0138 | Triple Loss: 0.0268
+[03/12/2021 12:13:08 - INFO - root] Step: 4780 | Loss: 1.6081 | Gen loss: 1.4434 | Gate Loss: 0.0126 | Triple Loss: 0.0113
+[03/12/2021 12:14:51 - INFO - root] Step: 4800 | Loss: 1.5742 | Gen loss: 1.5729 | Gate Loss: 0.0113 | Triple Loss: 0.0070
+[03/12/2021 12:16:35 - INFO - root] Step: 4820 | Loss: 1.5721 | Gen loss: 1.4097 | Gate Loss: 0.0030 | Triple Loss: 0.0154
+[03/12/2021 12:18:18 - INFO - root] Step: 4840 | Loss: 1.5861 | Gen loss: 1.3894 | Gate Loss: 0.0071 | Triple Loss: 0.0144
+[03/12/2021 12:20:02 - INFO - root] Step: 4860 | Loss: 1.5949 | Gen loss: 1.6676 | Gate Loss: 0.0259 | Triple Loss: 0.0351
+[03/12/2021 12:21:45 - INFO - root] Step: 4880 | Loss: 1.5615 | Gen loss: 1.5209 | Gate Loss: 0.0120 | Triple Loss: 0.0159
+[03/12/2021 12:23:29 - INFO - root] Step: 4900 | Loss: 1.6466 | Gen loss: 1.5317 | Gate Loss: 0.0116 | Triple Loss: 0.0174
+[03/12/2021 12:25:13 - INFO - root] Step: 4920 | Loss: 1.6515 | Gen loss: 1.5725 | Gate Loss: 0.0216 | Triple Loss: 0.0111
+[03/12/2021 12:26:55 - INFO - root] Step: 4940 | Loss: 1.5626 | Gen loss: 1.5306 | Gate Loss: 0.0123 | Triple Loss: 0.0111
+[03/12/2021 12:28:38 - INFO - root] Step: 4960 | Loss: 1.5978 | Gen loss: 1.6029 | Gate Loss: 0.0101 | Triple Loss: 0.0080
+[03/12/2021 12:30:21 - INFO - root] Step: 4980 | Loss: 1.6026 | Gen loss: 1.4525 | Gate Loss: 0.0121 | Triple Loss: 0.0245
+[03/12/2021 12:32:04 - INFO - root] Step: 5000 | Loss: 1.5779 | Gen loss: 1.4477 | Gate Loss: 0.0140 | Triple Loss: 0.0178
+[03/12/2021 12:33:47 - INFO - root] Step: 5020 | Loss: 1.5481 | Gen loss: 1.5791 | Gate Loss: 0.0080 | Triple Loss: 0.0141
+[03/12/2021 12:35:30 - INFO - root] Step: 5040 | Loss: 1.5348 | Gen loss: 1.3831 | Gate Loss: 0.0181 | Triple Loss: 0.0202
+[03/12/2021 12:37:12 - INFO - root] Step: 5060 | Loss: 1.6330 | Gen loss: 1.3591 | Gate Loss: 0.0146 | Triple Loss: 0.0101
+[03/12/2021 12:38:55 - INFO - root] Step: 5080 | Loss: 1.6342 | Gen loss: 1.6228 | Gate Loss: 0.0100 | Triple Loss: 0.0181
+[03/12/2021 12:40:38 - INFO - root] Step: 5100 | Loss: 1.6153 | Gen loss: 1.5947 | Gate Loss: 0.0187 | Triple Loss: 0.0194
+[03/12/2021 12:42:20 - INFO - root] Step: 5120 | Loss: 1.6640 | Gen loss: 1.6115 | Gate Loss: 0.0091 | Triple Loss: 0.0150
+[03/12/2021 12:44:03 - INFO - root] Step: 5140 | Loss: 1.5609 | Gen loss: 1.4915 | Gate Loss: 0.0051 | Triple Loss: 0.0079
+[03/12/2021 12:45:46 - INFO - root] Step: 5160 | Loss: 1.5557 | Gen loss: 1.4855 | Gate Loss: 0.0172 | Triple Loss: 0.0140
+[03/12/2021 12:47:29 - INFO - root] Step: 5180 | Loss: 1.6099 | Gen loss: 1.5404 | Gate Loss: 0.0130 | Triple Loss: 0.0155
+[03/12/2021 12:49:13 - INFO - root] Step: 5200 | Loss: 1.6389 | Gen loss: 1.8588 | Gate Loss: 0.0362 | Triple Loss: 0.0207
+[03/12/2021 12:50:57 - INFO - root] Step: 5220 | Loss: 1.6090 | Gen loss: 1.5945 | Gate Loss: 0.0088 | Triple Loss: 0.0135
+[03/12/2021 12:52:41 - INFO - root] Step: 5240 | Loss: 1.6025 | Gen loss: 1.7198 | Gate Loss: 0.0203 | Triple Loss: 0.0088
+[03/12/2021 12:54:24 - INFO - root] Step: 5260 | Loss: 1.6104 | Gen loss: 1.9185 | Gate Loss: 0.0102 | Triple Loss: 0.0168
+[03/12/2021 12:56:08 - INFO - root] Step: 5280 | Loss: 1.6142 | Gen loss: 1.5553 | Gate Loss: 0.0227 | Triple Loss: 0.0169
+[03/12/2021 12:57:52 - INFO - root] Step: 5300 | Loss: 1.6207 | Gen loss: 1.5418 | Gate Loss: 0.0068 | Triple Loss: 0.0152
+[03/12/2021 12:59:36 - INFO - root] Step: 5320 | Loss: 1.6398 | Gen loss: 1.5424 | Gate Loss: 0.0078 | Triple Loss: 0.0091
+[03/12/2021 13:01:19 - INFO - root] Step: 5340 | Loss: 1.5980 | Gen loss: 1.5415 | Gate Loss: 0.0181 | Triple Loss: 0.0233
+[03/12/2021 13:03:02 - INFO - root] Step: 5360 | Loss: 1.6732 | Gen loss: 1.4566 | Gate Loss: 0.0119 | Triple Loss: 0.0141
+[03/12/2021 13:04:47 - INFO - root] Step: 5380 | Loss: 1.5978 | Gen loss: 1.5781 | Gate Loss: 0.0218 | Triple Loss: 0.0149
+[03/12/2021 13:06:29 - INFO - root] Step: 5400 | Loss: 1.5997 | Gen loss: 1.6717 | Gate Loss: 0.0174 | Triple Loss: 0.0289
+[03/12/2021 13:08:12 - INFO - root] Step: 5420 | Loss: 1.6296 | Gen loss: 1.6016 | Gate Loss: 0.0132 | Triple Loss: 0.0219
+[03/12/2021 13:09:55 - INFO - root] Step: 5440 | Loss: 1.5697 | Gen loss: 1.5401 | Gate Loss: 0.0135 | Triple Loss: 0.0196
+[03/12/2021 13:11:38 - INFO - root] Step: 5460 | Loss: 1.5146 | Gen loss: 1.3741 | Gate Loss: 0.0182 | Triple Loss: 0.0170
+[03/12/2021 13:13:21 - INFO - root] Step: 5480 | Loss: 1.6126 | Gen loss: 1.5493 | Gate Loss: 0.0153 | Triple Loss: 0.0282
+[03/12/2021 13:15:05 - INFO - root] Step: 5500 | Loss: 1.6156 | Gen loss: 1.4926 | Gate Loss: 0.0119 | Triple Loss: 0.0147
+[03/12/2021 13:16:47 - INFO - root] Step: 5520 | Loss: 1.6228 | Gen loss: 1.8061 | Gate Loss: 0.0274 | Triple Loss: 0.0225
+[03/12/2021 13:18:29 - INFO - root] Step: 5540 | Loss: 1.5742 | Gen loss: 1.2483 | Gate Loss: 0.0089 | Triple Loss: 0.0112
+[03/12/2021 13:20:12 - INFO - root] Step: 5560 | Loss: 1.5782 | Gen loss: 1.5393 | Gate Loss: 0.0191 | Triple Loss: 0.0274
+[03/12/2021 13:21:55 - INFO - root] Step: 5580 | Loss: 1.6528 | Gen loss: 1.7406 | Gate Loss: 0.0224 | Triple Loss: 0.0241
+[03/12/2021 13:23:38 - INFO - root] Step: 5600 | Loss: 1.5102 | Gen loss: 1.4648 | Gate Loss: 0.0059 | Triple Loss: 0.0135
+[03/12/2021 13:25:15 - INFO - root] Step: 5620 | Loss: 1.5849 | Gen loss: 1.4995 | Gate Loss: 0.0077 | Triple Loss: 0.0101
+[03/12/2021 13:25:37 - INFO - transformers.configuration_utils] Configuration saved in ../models/comve/grf-comve_e3_lr2-4_eps-5/config.json
+[03/12/2021 13:25:41 - INFO - transformers.modeling_utils] Model weights saved in ../models/comve/grf-comve_e3_lr2-4_eps-5/pytorch_model.bin
+[03/12/2021 13:25:50 - INFO - root] Saving model checkpoint to ../models/comve/grf-comve_e3_lr2-4_eps-5
+[03/12/2021 13:25:50 - INFO - root]  global_step = 5625, average loss = 2.16106221110026
+[03/12/2021 13:25:51 - INFO - root] --------------------------------------------------Features--------------------------------------------------
+[03/12/2021 13:25:51 - INFO - root] Input: ['ĠSummer', 'Ġin', 'ĠNorth', 'ĠAmerica', 'Ġis', 'Ġgreat', 'Ġfor', 'Ġskiing', ',', 'Ġ', 'Ġsnow', 'sh', 'oe', 'ing', ',', 'Ġ', 'Ġand', 'Ġmaking', 'Ġa', 'Ġsnow', 'man', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 13:25:51 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 13:25:51 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 13:25:51 - INFO - root] Target: []
+[03/12/2021 13:25:51 - INFO - root] Position: []
+[03/12/2021 13:25:51 - INFO - root] Labels: []
+[03/12/2021 13:25:51 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/12/2021 13:25:51 - INFO - root] Input: ['ĠYou', 'Ġcan', 'Ġuse', 'Ġdeter', 'gent', 'Ġto', 'Ġdye', 'Ġyour', 'Ġhair', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 13:25:51 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 13:25:51 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 13:25:51 - INFO - root] Target: []
+[03/12/2021 13:25:51 - INFO - root] Position: []
+[03/12/2021 13:25:51 - INFO - root] Labels: []
+[03/12/2021 13:25:51 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/12/2021 13:25:51 - INFO - root] Input: ['Ġpassing', 'Ġyour', 'Ġdriving', 'Ġlicense', 'Ġexams', 'Ġrequires', 'Ġstudying', 'Ġfor', 'Ġyour', 'Ġclasses', '.', '<|endoftext|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>', '<|pad|>']
+[03/12/2021 13:25:51 - INFO - root] Attention mask: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 13:25:51 - INFO - root] Position: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[03/12/2021 13:25:51 - INFO - root] Target: []
+[03/12/2021 13:25:51 - INFO - root] Position: []
+[03/12/2021 13:25:51 - INFO - root] Labels: []
+[03/12/2021 13:25:51 - INFO - root] Gate labels: [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+[03/12/2021 13:25:51 - INFO - root] ***** Running evaluation *****
+[03/12/2021 13:25:51 - INFO - root]   Num examples = 997
+[03/12/2021 13:25:51 - INFO - root]   Batch size = 16
+[03/12/2021 13:39:39 - INFO - root] Save generation result in ../models/comve/grf-comve_e3_lr2-4_eps-5/result_ep:dev.txt
+[03/12/2021 13:39:39 - INFO - root] Dev evaluate bleu: 0.1779
