@@ -21,8 +21,7 @@ Approaches:
 * `graph_method`: GRF is implemented under this directory, please refer to the readme under this directory
 
 ## Evaluation Results:
-System                  | Dev(BLEU)       | Test(BLEU)         | Human              | Pretrain
-                        |                 |                    |                    | LM Params
+System                  | Dev(BLEU)       | Test(BLEU)         | Human              | PT LM Params
 :----------             |----------:      |----------:         |----------:         |----------:
 Copy Source             | 16.53           | 17.23              | N.A.               | N.A.
 NMT                     | around 1.0      | around 1.0         | 0.59               | N.A. 
