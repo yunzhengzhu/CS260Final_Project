@@ -21,8 +21,9 @@ Approaches:
 * `graph_method`: GRF is implemented under this directory, please refer to the readme under this directory
 
 ## Evaluation Results:
-System                  | Dev(BLEU)       | Test(BLEU)         | Human              | LM Params(Pretrain)
-:----------             |----------       |----------          |----------          |----------
+System                  | Dev(BLEU)       | Test(BLEU)         | Human              | Pretrain
+                        |                 |                    |                    | LM Params
+:----------             |----------:      |----------:         |----------:         |----------:
 Copy Source             | 16.53           | 17.23              | N.A.               | N.A.
 NMT                     | around 1.0      | around 1.0         | 0.59               | N.A. 
 GPT2-small              | 14.01           | 13.66              | 1.80               | 117 M
