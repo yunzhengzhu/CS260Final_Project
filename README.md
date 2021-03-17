@@ -21,7 +21,17 @@ Approaches:
 * `graph_method`: GRF is implemented under this directory, please refer to the readme under this directory
 
 ## Evaluation Results:
-
+System                  | Dev(BLEU)       | Test(BLEU)         | Human              |Pretrained LM Params
+:----------             |----------:      |----------:         |----------:         |----------:
+Copy Source             | 16.53           | 17.23              | N.A.               | N.A.
+NMT                     | around 1.0      | around 1.0         | 0.59               | N.A. 
+GPT2-small              | 14.01           | 13.66              | 1.80               | 117 M
+GPT2-medium             | 16.79           | 16.08              | 1.94               | 345 M
+KaLM (BART-Large)       | 18.98           | 18.5               | 2.08               | 406 M
+GRF (GPT2-small)        | 17.83           | 17.56              | 1.91               | 117 M
+Muti-Task (GPT2-small)  | 17.11           | 17.82              | 1.97               | 117 M
+GRF (GPT2-medium)       | 18.36           | 18.45              | 2.21               | 345 M
+Muti-Task (GPT2-medium) | 19.15           | 18.31              | 2.26               | 345 M 
 
 
 [1]: https://github.com/wangcunxiang/SemEval2020-Task4-Commonsense-Validation-and-Explanation
