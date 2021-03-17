@@ -24,6 +24,7 @@ cpnet_vocab = set([c.replace("_", " ") for c in cpnet_vocab])
 
 nlp = spacy.load('en_core_web_sm', disable=['ner', 'parser', 'textcat'])
 
+# return sentence token set whose lemmatized tokens exist in both model and cpnet_vocab
 def hard_ground(sent):
     global cpnet_vocab, model_vocab
     sent = sent.lower()
@@ -42,58 +43,51 @@ def hard_ground(sent):
 def match(input):
     return match_mentioned_concepts(input[0], input[1])
 
+# match two concepts together
 def match_mentioned_concepts(sents, answers):
     #global nlp
-    #matcher = load_matcher(nlp)
-
 
     res = []
     # print("Begin matching concepts.")
     for sid, s in tqdm(enumerate(sents), total=len(sents)):#, desc="grounding batch_id:%d"%batch_id):
         a = answers[sid]
 
-        all_concepts = hard_ground(s + ' ' + a)
-        #print(all_concepts)
-        question_concepts = hard_ground(s)
-        #print(question_concepts)
+        all_concepts = hard_ground(s + ' ' + a) # find all concepts in the sentence and answer
+
+        question_concepts = hard_ground(s) 
 
         answer_concepts = all_concepts - question_concepts
         
         res.append({"sent": s, "ans": a, "qc": list(question_concepts), "ac": list(answer_concepts)})
-    return res
 
-def lemmatize(nlp, concept):
+    # res = list of dictionaries 
+    # {"sent": s, 
+    #  "ans" : a,
+    #  "qc"  : list of questionconcepts
+    #  "ac"  : list of answer concepts}
+    return res 
 
-    doc = nlp(concept.replace("_"," "))
-    lcs = set()
-    
-    lcs.add("_".join([token.lemma_ for token in doc])) # all lemma
-    return lcs
 
-def load_matcher(nlp):
-    config = configparser.ConfigParser()
-    config.read("paths.cfg")
-    
-    matcher = Matcher(nlp.vocab)
-    for concept in cpnet_vocab:
-        matcher.add(concept, None, [{"LEMMA":concept}])
-    
-    return matcher
-
+# for each pair of src and tgt, dump concepts found in question and answers into the "concept_nv.json" file
 def grounding_sentences(src, tgt, type, path):
     
     #nlp.add_pipe(nlp.create_pipe('sentencizer'))
     res = match_mentioned_concepts(sents=src, answers=tgt)
-    #res[0]["qc"] = reduce_redundant_concepts(res[0]["qc"])
+    #res[0]["qc"] = reduce_redundant_concepts(res[0]["qc"])   
+
+    # res = list of dictionaries 
+    # {"sent": s, 
+    #  "ans" : a,
+    #  "qc"  : list of questionconcepts
+    #  "ac"  : list of answer concepts} 
     
     with open(path + "/{}/concepts_nv.json".format(type), 'w') as f:
         for line in res:            
             json.dump(line, f)
             f.write('\n')
 
-
     
-
+# return list of row strings (except index) in the csv
 def read_csv(data_path="train/source.csv"):
     data = []
     with open(data_path, 'r') as f:
@@ -111,8 +105,6 @@ def read_model_vocab(data_path):
     print(len(model_vocab))
 
 
-
-
 dataset = sys.argv[1]
 
 DATA_PATH = config["paths"][dataset + "_dir"]
@@ -121,8 +113,10 @@ DATA_PATH = config["paths"][dataset + "_dir"]
 SRC_FILE = DATA_PATH + "/{}/source.csv"
 TGT_FILE = DATA_PATH + "/{}/target.csv"
 
+# read vocabulary of model - gpt2
 read_model_vocab(config["paths"]["gpt2_vocab"])
 
+# dump found concepts into json file /{TYPE}/concepts_nv.json
 TYPE='train'
 src = read_csv(SRC_FILE.format(TYPE))
 tgt = read_csv(TGT_FILE.format(TYPE))

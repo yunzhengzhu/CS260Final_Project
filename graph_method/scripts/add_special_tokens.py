@@ -1,12 +1,14 @@
 import json
+import sys
 
-f = open('../models/gpt2-small/vocab.json', 'r')
+model = sys.argv[1]
+f = open(f'../models/{model}/vocab.json', 'r')
 vocab = json.load(f)
 f.close()
 vocab["<|bos|>"] = len(vocab)
 vocab["<|pad|>"] = len(vocab)
 print(len(vocab))
-f = open('../models/gpt2-small/vocab.json', 'w')
+f = open(f'../models/{model}/vocab.json', 'w')
 vocab = json.dump(vocab, f)
 f.close()
 

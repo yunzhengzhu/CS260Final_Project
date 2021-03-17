@@ -17,7 +17,9 @@ networkx == 2.1
 spacy == 2.2.1
 torch-scatter == 2.0.5+${CUDA}
 ```
-
+```
+python -m spacy download en_core_web_sm
+```
 You also need to install [fairseq](https://github.com/pytorch/fairseq).
 
 For `torch-scatter`, `${CUDA}` should be replaced by either `cpu`, `cu92`, `cu101` or `cu102` depending on your PyTorch installation. 
@@ -49,6 +51,10 @@ python ground_concepts_simple.py $DATA
 python find_neighbours.py $DATA
 python filter_triple.py $DATA
 ```
+| Python File | Feature |
+| ----------- | ----------- |
+ground_concepts_simple.py   | find concepts whose lemmatized version smatch with those of tokens in the src and tgt sets.
+find_neighbours.py          | find
 
 Download the pre-trained GPT-2 model.
 

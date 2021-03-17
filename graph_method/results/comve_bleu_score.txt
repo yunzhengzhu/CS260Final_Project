@@ -1,2 +1,7 @@
-C_BLEU: 10.2188
-Avg_Sem_Sim: 0.22691
+File: results/grf-comve-small.txt
+C_BLEU: 17.5650
+Avg_Sem_Sim: 0.33188
+
+File: results/grf-comve-medium.txt
+C_BLEU: 18.4553
+Avg_Sem_Sim: 0.32585
