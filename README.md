@@ -17,7 +17,7 @@ Approaches:
     *  `subtaskC_answers_test_CONFIG.csv` are the files of the generated test results
 * `GPT-2`: please refer to the readme under this directory
 * `NMT`: please refer to the readme under this directory
-* `KaLM`: please refer to the readme under this directory
+* `KaLM`: please refer to [KaLM](https://github.com/huangxt39/KaLM)
 * `graph_method`: GRF is implemented under this directory, please refer to the readme under this directory
 
 ## Evaluation Results:
